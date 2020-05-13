@@ -1,4 +1,4 @@
-function writex() {
+function index() {
     var name=document.getElementById("name").value;
     var gender=document.getElementById("gender").value;
     var city=document.getElementById("city").value;

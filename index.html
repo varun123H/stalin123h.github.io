@@ -41,7 +41,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>
-<script src="https://github.com/varun123H/stalin123h.github.io/blob/master/static/writex.js" type="text/javascript"></script>
+
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <!-- Avatar image in top left corner -->
@@ -161,7 +161,36 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>
-<script src="https://github.com/varun123H/stalin123h.github.io/blob/master/static/writex.js" type="text/javascript"></script>
+<script> 
+function writex() {
+    var name=document.getElementById("name").value;
+    var gender=document.getElementById("gender").value;
+    var city=document.getElementById("city").value;
+
+     if(name==''|| gender==''|| city==''){
+         alert('required');
+         return false;
+     }
+     else{
+        firebase.database().ref('user/'+name).set({
+            userName: name,
+            userGender: gender,
+            userCity: city
+        });
+        swal("Data saved","Successfully");
+         return true;
+     }
+
+    firebase.database().ref('user/'+name).set({
+        userName: name,
+        userGender: gender,
+        userCity: city
+    });
+    
+
+
+}
+</script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- End Contact Section -->
   </div>
